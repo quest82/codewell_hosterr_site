@@ -1,4 +1,18 @@
 /* 
+VARIABLE KEYS
+*/
+
+:root {
+	--clr-background: hsl(42, 59%, 94%);
+	--clr-btn: hsl(223, 79%, 60%);
+	--clr-gradient-red: hsl(359, 75%, 66%);
+	--clr-gradient-yellow: hsl(28, 77%, 64%);
+	--clr-text-body: hsl(0, 0%, 32%);
+	--clr-text-bold: hsl(15, 16%, 10%);
+  --clr-text-white: hsl(100, 100%, 100%);
+}
+
+/* 
 CSS RESET
  */
 
@@ -75,7 +89,16 @@ GLOBAL
 */
 
 body {
-  
+	background-color: var(--clr-background);
+	color: var(--clr-text-body);
+}
+
+a {
+	color: var(--clr-text-body);
+}
+
+.flex {
+	display: flex;
 }
 
 /* 
@@ -88,6 +111,55 @@ MOBILE VIEW
 .main,
 .footer {
 	max-width: 800px;
-	width: 95%;
+	width: 92%;
 	margin: 0 auto;
+}
+
+.header {
+	margin-top: 1em;
+	margin-bottom: 9em;
+}
+
+.header__nav,
+.header__join {
+	display: none;
+}
+
+.header--flex,
+.header__logo--flex {
+	align-items: center;
+}
+
+.header--flex {
+  justify-content: space-between;
+}
+
+.main__hero {
+  margin-bottom: 3em;
+}
+
+/* ---- Typography ---- */
+
+.header__logo__news {
+	font-size: .7rem;
+  color: var(--clr-text-white);
+  background-color: var(--clr-gradient-yellow);
+  padding: .45em 1em;
+  border-radius: 15px;
+}
+
+.main__content__title {
+  line-height: 1.2;
+  font-size: 3.2rem;
+  
+}
+
+/* ---- Assets ---- */
+
+.header__logo__img {
+	margin-right: 10px;
+}
+
+.header__hamburger__img {
+  width: 37px;
 }
