@@ -9,7 +9,45 @@ VARIABLE KEYS
 	--clr-gradient-yellow: hsl(28, 77%, 64%);
 	--clr-text-body: hsl(0, 0%, 32%);
 	--clr-text-bold: hsl(15, 16%, 10%);
-  --clr-text-white: hsl(100, 100%, 100%);
+	--clr-text-white: hsl(100, 100%, 100%);
+
+	--fnt-fam-1: "Lato";
+	--fnt-fam-2: "Playfair-Display";
+	--fnt-wght-normal: 400;
+	--fnt-wght-bold: 700;
+}
+
+/* 
+FONT IMPORT
+*/
+
+/* ---- Lato - Bold ---- */
+@font-face {
+	font-family: "Lato";
+	src: url(./Assets/Lato-Bold.ttf) format("truetype");
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
+}
+
+/* ---- Lato - Normal ---- */
+@font-face {
+	font-family: "Lato";
+	src: url(./Assets/Lato-Regular.ttf) format("truetype");
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* ---- Playfair Display ---- */
+
+@font-face {
+	font-family: "Playfair-Display";
+	src: url(./Assets/PlayfairDisplay-VariableFont_wght.ttf)
+		format("truetype-variations");
+	font-display: swap;
+	font-weight: 1 999;
+	font-style: normal;
 }
 
 /* 
@@ -91,6 +129,7 @@ GLOBAL
 body {
 	background-color: var(--clr-background);
 	color: var(--clr-text-body);
+	font-family: var(--fnt-fam-1);
 }
 
 a {
@@ -99,6 +138,7 @@ a {
 
 .flex {
 	display: flex;
+	flex-direction: column;
 }
 
 /* 
@@ -117,7 +157,7 @@ MOBILE VIEW
 
 .header {
 	margin-top: 1em;
-	margin-bottom: 9em;
+	margin-bottom: 5.5em;
 }
 
 .header__nav,
@@ -127,31 +167,89 @@ MOBILE VIEW
 
 .header--flex,
 .header__logo--flex {
+	flex-direction: row;
 	align-items: center;
 }
 
 .header--flex {
-  justify-content: space-between;
+	justify-content: space-between;
 }
 
 .main__hero {
-  margin-bottom: 3em;
+	width: 400px;
+	height: 400px;
+	position: relative;
 }
 
+.main__hero--flex {
+	align-items: center;
+}
+
+.main__content {
+	margin-bottom: 3em;
+}
+
+.main__content__form {
+	margin-bottom: 0.58em;
+}
+
+.footer {
+	margin-bottom: 1em;
+}
+
+.footer__socials {
+	margin-bottom: 3em;
+}
+
+.footer__helper--flex {
+	flex-direction: row;
+	align-items: center;
+}
 /* ---- Typography ---- */
 
 .header__logo__news {
-	font-size: .7rem;
-  color: var(--clr-text-white);
-  background-color: var(--clr-gradient-yellow);
-  padding: .45em 1em;
-  border-radius: 15px;
+	font-size: 0.7rem;
+	color: var(--clr-text-white);
+	background-color: var(--clr-gradient-yellow);
+	padding: 0.45em 1em;
+	border-radius: 15px;
 }
 
 .main__content__title {
-  line-height: 1.2;
-  font-size: 3.2rem;
-  
+	line-height: 1.2;
+	margin-bottom: 0.3em;
+	font-size: 3rem;
+	font-weight: var(--fnt-wght-bold);
+	color: var(--clr-text-bold);
+	font-family: var(--fnt-fam-2);
+}
+
+.main__content__copy {
+	margin-bottom: 0.8em;
+}
+
+.main__content__guarantee__text {
+	list-style: none;
+	position: relative;
+}
+
+.footer__socials__list {
+	display: inline-block;
+	margin-right: 1.2em;
+}
+
+.footer__helper__text__top,
+.footer__helper__text__bottom {
+	line-height: 1.4;
+	color: var(--clr-text-bold);
+}
+
+.footer__helper__text__top {
+	font-family: var(--fnt-fam-2);
+}
+
+.footer__helper__text__bottom {
+	font-weight: var(--fnt-wght-bold);
 }
 
 /* ---- Assets ---- */
@@ -161,5 +259,67 @@ MOBILE VIEW
 }
 
 .header__hamburger__img {
-  width: 37px;
+	width: 37px;
+}
+
+.btn {
+	color: var(--clr-text-white);
+	background-color: var(--clr-btn);
+}
+
+.main__hero__img,
+.main__hero__blue,
+.main__hero__pink,
+.main__hero__purple {
+	position: absolute;
+	width: 280px;
+}
+
+.main__hero__blue {
+	z-index: 1;
+	transform: rotate(-40deg);
+}
+
+.main__hero__pink {
+	z-index: 2;
+	transform: rotate(-25deg);
+}
+
+.main__hero__purple {
+	z-index: 3;
+	transform: rotate(-14deg);
+}
+
+.main__hero__img {
+	z-index: 4;
+}
+
+input {
+	display: block;
+	width: 100%;
+	padding: 0.65em 0.9em;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+}
+
+.main__content__form__input {
+	margin-bottom: 0.6em;
+}
+
+.main__content__guarantee__text::before {
+	content: "";
+	background-image: url(./Assets/Checkmark.svg);
+	background-size: contain;
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	position: relative;
+	top: 0.2em;
+	margin-right: 12px;
+}
+
+.footer__helper__avatar {
+	width: 48px;
+	margin-right: 1em;
 }
