@@ -7,8 +7,8 @@ VARIABLE KEYS
 	--clr-btn: hsl(223, 79%, 60%);
 	--clr-gradient-red: hsl(359, 75%, 66%);
 	--clr-gradient-yellow: hsl(28, 77%, 64%);
-	--clr-text-body: hsl(0, 0%, 32%);
-	--clr-text-bold: hsl(15, 16%, 10%);
+	--clr-text-body: hsl(0, 1%, 28%);
+	--clr-text-bold: hsl(13, 16%, 11%);
 	--clr-text-white: hsl(100, 100%, 100%);
 
 	--fnt-fam-1: "Lato";
@@ -176,13 +176,14 @@ MOBILE VIEW
 }
 
 .main__hero {
-	width: 400px;
-	height: 400px;
+	height: 440px;
+	margin-bottom: 3em;
 	position: relative;
 }
 
 .main__hero--flex {
 	align-items: center;
+	justify-content: center;
 }
 
 .main__content {
@@ -194,7 +195,7 @@ MOBILE VIEW
 }
 
 .footer {
-	margin-bottom: 1em;
+	margin-bottom: 3em;
 }
 
 .footer__socials {
@@ -219,6 +220,7 @@ MOBILE VIEW
 	line-height: 1.2;
 	margin-bottom: 0.3em;
 	font-size: 3rem;
+	font-size: 3.5rem;
 	font-weight: var(--fnt-wght-bold);
 	color: var(--clr-text-bold);
 	font-family: var(--fnt-fam-2);
@@ -272,13 +274,14 @@ MOBILE VIEW
 .main__hero__pink,
 .main__hero__purple {
 	position: absolute;
-	width: 280px;
+	width: clamp(260px, 80%, 450px);
 }
 
 .main__hero__blue {
 	z-index: 1;
 	transform: rotate(-40deg);
 }
+
 
 .main__hero__pink {
 	z-index: 2;
@@ -322,6 +325,35 @@ input {
 .footer__helper__avatar {
 	width: 48px;
 	margin-right: 1em;
+}
+
+/* 
+TABLET VIEW - 700px
+*/
+
+@media (min-width: 700px) {
+	input{
+		display: inline-block;
+	}
+
+	.main__content__form__input {
+		width: 50%;
+		margin-right: .7em;
+	}
+
+	.main__content__form__btn {
+		width: 20%;
+	}
+
+	.footer--flex {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.footer__socials {
+		margin-bottom: 0;
+	}
 }
 
 /* 
