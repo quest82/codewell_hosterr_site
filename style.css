@@ -267,6 +267,8 @@ MOBILE VIEW
 .btn {
 	color: var(--clr-text-white);
 	background-color: var(--clr-btn);
+	padding: 0.65em 0.9em;
+	border-radius: 4px;
 }
 
 .main__hero__img,
@@ -281,7 +283,6 @@ MOBILE VIEW
 	z-index: 1;
 	transform: rotate(-40deg);
 }
-
 
 .main__hero__pink {
 	z-index: 2;
@@ -332,13 +333,13 @@ TABLET VIEW - 700px
 */
 
 @media (min-width: 700px) {
-	input{
+	input {
 		display: inline-block;
 	}
 
 	.main__content__form__input {
 		width: 50%;
-		margin-right: .7em;
+		margin-right: 0.7em;
 	}
 
 	.main__content__form__btn {
@@ -357,5 +358,49 @@ TABLET VIEW - 700px
 }
 
 /* 
-DESKTOP VIEW
+DESKTOP VIEW - 1200px
 */
+
+@media (min-width: 1200px) {
+	/* ---- Layout ---- */
+
+	.header__hamburger {
+		display: none;
+	}
+
+	.header__join,
+	.header__nav {
+		display: block;
+	}
+
+	.main--flex  {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.main__hero {
+		width: 40%;
+	}
+
+	.main__content {
+		width: 50%;
+	}
+
+	/* ---- Typography ---- */
+
+	.header__nav__list__item {
+		list-style: none;
+		display: inline-block;
+		margin-left: 1em;
+	}
+
+	.header__join__waitlist,
+	.header__join__login {
+		display: inline-block;
+	}
+
+	.header__join__waitlist {
+		margin-left: .7em;
+	}
+}
