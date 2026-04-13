@@ -211,7 +211,7 @@ MOBILE VIEW
 .header__logo__news {
 	font-size: 0.7rem;
 	color: var(--clr-text-white);
-	background-color: var(--clr-gradient-yellow);
+	background-image: linear-gradient(to left, var(--clr-gradient-red), var(--clr-gradient-yellow));
 	padding: 0.45em 1em;
 	border-radius: 15px;
 }
@@ -233,6 +233,12 @@ MOBILE VIEW
 .main__content__guarantee__text {
 	list-style: none;
 	position: relative;
+}
+
+.header__nav__list__item__link:hover,
+.footer__socials__list__link:hover,
+.header__join__login:hover {
+	color: var(--clr-btn);
 }
 
 .footer__socials__list {
@@ -269,6 +275,18 @@ MOBILE VIEW
 	background-color: var(--clr-btn);
 	padding: 0.65em 0.9em;
 	border-radius: 4px;
+	transition-duration: 400ms 300ms;
+	transition-property: background padding;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: var(--clr-text-body);
+}
+
+.btn:active {
+	padding: .60em .7em;
+	font-size: .9rem;
 }
 
 .main__hero__img,
